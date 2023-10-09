@@ -1,10 +1,16 @@
 # FireflyGodView
 
+## 中文
 
+一个简单易用的上帝视角插件，可以实现如文明六、英雄联盟、魔兽争霸3等游戏中的摄像机视角
+
+## English
+
+A simple and user-friendly top-down perspective plugin that can achieve camera views similar to games such as Civilization VI, League of Legends, and Warcraft III.
 
 # 如何使用（How to use）
 
-## Chinese
+## 中文
 
 1. 下载本插件，放到项目的Plugins文件夹中
 2. 右键项目的 `.uproject` 文件，选择 `Generate Visual Studio project files`
@@ -22,7 +28,7 @@
 
 # 配置文件（Configuration）
 
-## Chinese
+## 中文
 
 上帝视角的配置文件，在插件的 `Content` 文件夹中，是一个名为 `Config_FireflyGodView` 的数据资产
 
