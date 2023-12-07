@@ -114,3 +114,16 @@ FVector AFireflyGodViewCameraManager::GetViewportDirection() const
 	return UKismetMathLibrary::ProjectVectorOnToPlane(ViewRotation.Vector()
 		, -FVector::ZAxisVector).GetSafeNormal();
 }
+
+FVector AFireflyGodViewCameraManager::CalcCameraLocation_Implementation()
+{
+	if (!IsValid(GodViewConfig))
+	{
+		return FVector(0.f, 0.f, 0.f);
+	}
+
+	PreviousLocation = PreviousLocation + GetCursorMoveDirection() * GodViewConfig->ScreenMoveSpeed;
+	PreviousLocation.Z = GodViewConfig->CameraArmLength;
+
+	return PreviousLocation;
+}

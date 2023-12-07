@@ -23,7 +23,7 @@ public:
 	// 摄像机的初始位置
 	// Camera 's initial location
 	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Meta = (EditCondition = "bEnableCameraInitialLocation", EditConditionHides))
-	FVector CameraInitialLocation = FVector(0.0f, 0.0f, 1000.0f);
+	FVector CameraInitialLocation = FVector(0.f, 0.f, 0.f);
 
 	// 摄像机的初始旋转
 	// Camera 's initial rotation
@@ -34,6 +34,11 @@ public:
 	// Screen 's moving speed of god view
 	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Meta = (ClampMin = 0.f, UIMin = 0.f))
 	float ScreenMoveSpeed = 10.f;
+
+	// 摄像机的悬臂长度
+	// Camera's arm length
+	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Meta = (ClampMin = 0.f, UIMin = 0.f))
+	float CameraArmLength = 1200.f;
 
 	// 触发上帝视角屏幕移动的鼠标在屏幕边缘的比例
 	// The proportion of the mouse at the edge of the screen that triggers the movement of the screen from God's perspective

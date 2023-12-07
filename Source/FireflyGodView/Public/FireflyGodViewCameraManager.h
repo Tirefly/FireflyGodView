@@ -44,6 +44,10 @@ public:
 	UFUNCTION(BlueprintPure, Category = GodView)
 	FVector GetViewportDirection() const;
 
+	UFUNCTION(BlueprintNativeEvent, BlueprintPure, Category = GodView)
+	FVector CalcCameraLocation();
+	virtual FVector CalcCameraLocation_Implementation();
+
 protected:
 	// 上帝视角的配置数据资产
 	// God view 's config data asset
