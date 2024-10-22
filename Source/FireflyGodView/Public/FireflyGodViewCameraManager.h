@@ -54,10 +54,5 @@ protected:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = GodView)
 	TObjectPtr<UFireflyGodViewConfig> GodViewConfig;
 
-	// 游戏运行时缓存的上一帧的摄像机位置
-	// Cached previous camera location while game runtime
-	UPROPERTY(BlueprintReadWrite, Category = GodView)
-	FVector PreviousLocation = FVector::ZeroVector;
-
 #pragma endregion
 };

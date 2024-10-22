@@ -20,6 +20,11 @@ public:
 	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
 	bool bEnableCameraInitialLocation = false;
 
+	// 是否锁定摄像机的位置
+	// Whether to lock the camera's position
+    UPROPERTY(BlueprintReadOnly, EditDefaultsOnly)
+    bool bLockCameraLocation = false;
+
 	// 摄像机的初始位置
 	// Camera 's initial location
 	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Meta = (EditCondition = "bEnableCameraInitialLocation", EditConditionHides))

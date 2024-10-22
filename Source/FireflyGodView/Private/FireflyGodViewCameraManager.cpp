@@ -122,8 +122,16 @@ FVector AFireflyGodViewCameraManager::CalcCameraLocation_Implementation()
 		return FVector(0.f, 0.f, 0.f);
 	}
 
-	PreviousLocation = PreviousLocation + GetCursorMoveDirection() * GodViewConfig->ScreenMoveSpeed;
-	PreviousLocation.Z = GodViewConfig->CameraArmLength;
+	FVector NewLocation = FVector::ZeroVector;
+	if (GodViewConfig->bLockCameraLocation)
+	{
+		NewLocation = GodViewConfig->CameraInitialLocation + GetCameraRotation().Vector() * -GodViewConfig->CameraArmLength;
+	}
+	else
+	{
+		NewLocation = GetCameraLocation() + GetCursorMoveDirection() * GodViewConfig->ScreenMoveSpeed +
+			GetCameraRotation().Vector() * -GodViewConfig->CameraArmLength;
+	}
 
-	return PreviousLocation;
+	return NewLocation;
 }
